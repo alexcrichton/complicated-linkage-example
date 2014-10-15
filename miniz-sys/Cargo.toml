@@ -4,10 +4,10 @@ name = "miniz-sys"
 version = "0.0.1"
 authors = ["Alex Crichton <alex@alexcrichton.com>"]
 links = ["miniz"]
-build = "miniz-build/build"
+build = "build.rs"
 
-[dependencies.miniz-build]
-path = "../miniz-build"
+[build-dependencies]
+gcc = "^1.2.0"
 
 [lib]
 name = "miniz-sys"

@@ -1,4 +1,4 @@
-extern crate "cmake-build" as cmake;
+extern crate cmake;
 
 fn main() {
     // Like curl-rust, register out dependencies if they have metadata in our

@@ -4,14 +4,11 @@ name = "libgit2-sys"
 version = "0.0.1"
 authors = ["Alex Crichton <alex@alexcrichton.com>"]
 links = ["git2"]
-build = "libgit2-build/build"
+build = "build.rs"
 
 [features]
 ssh = ["libssh2-sys"]
 ssl = ["openssl-sys"]
-
-[dependencies.libgit2-build]
-path = "../libgit2-build"
 
 [dependencies.libz-sys]
 path = "../libz-sys"
@@ -33,6 +30,9 @@ optional = true
 [target.x86_64-apple-darwin.dependencies.openssl-sys]
 path = "../openssl-sys"
 optional = true
+
+[build-dependencies]
+cmake = "*"
 
 [lib]
 name = "libgit2-sys"
