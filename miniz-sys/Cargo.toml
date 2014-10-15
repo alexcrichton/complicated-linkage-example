@@ -6,8 +6,8 @@ authors = ["Alex Crichton <alex@alexcrichton.com>"]
 links = ["miniz"]
 build = "build.rs"
 
-[build-dependencies]
-gcc = "^1.2.0"
+[build-dependencies.gcc]
+git = "https://github.com/alexcrichton/gcc-rs"
 
 [lib]
 name = "miniz-sys"

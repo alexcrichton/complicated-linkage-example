@@ -16,8 +16,8 @@ path = "../openssl-sys"
 [target.x86_64-apple-darwin.dependencies.openssl-sys]
 path = "../openssl-sys"
 
-[build-dependencies]
-make = "*"
+[build-dependencies.make]
+git = "https://github.com/alexcrichton/make-rs"
 
 [lib]
 name = "libssh2-sys"

@@ -16,9 +16,10 @@ path = "../openssl-sys"
 [target.x86_64-apple-darwin.dependencies.openssl-sys]
 path = "../openssl-sys"
 
-[build-dependencies]
-pkg-config = "*"
-make = "*"
+[build-dependencies.pkg-config]
+git = "https://github.com/alexcrichton/pkg-config-rs"
+[build-dependencies.make]
+git = "https://github.com/alexcrichton/make-rs"
 
 [lib]
 name = "curl-sys"

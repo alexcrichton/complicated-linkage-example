@@ -31,8 +31,8 @@ optional = true
 path = "../openssl-sys"
 optional = true
 
-[build-dependencies]
-cmake = "*"
+[build-dependencies.cmake]
+git = "https://github.com/alexcrichton/cmake-rs"
 
 [lib]
 name = "libgit2-sys"
