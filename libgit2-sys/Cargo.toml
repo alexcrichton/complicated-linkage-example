@@ -1,0 +1,39 @@
+[package]
+
+name = "libgit2-sys"
+version = "0.0.1"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+links = ["git2"]
+build = "libgit2-build/build"
+
+[features]
+ssh = ["libssh2-sys"]
+ssl = ["openssl-sys"]
+
+[dependencies.libgit2-build]
+path = "../libgit2-build"
+
+[dependencies.libz-sys]
+path = "../libz-sys"
+
+[dependencies.libssh2-sys]
+path = "../libssh2-sys"
+optional = true
+
+# Everywhere we aren't windows we depend on OpenSSL
+[target.i686-unknown-linux-gnu.dependencies.openssl-sys]
+path = "../openssl-sys"
+optional = true
+[target.x86_64-unknown-linux-gnu.dependencies.openssl-sys]
+path = "../openssl-sys"
+optional = true
+[target.i686-apple-darwin.dependencies.openssl-sys]
+path = "../openssl-sys"
+optional = true
+[target.x86_64-apple-darwin.dependencies.openssl-sys]
+path = "../openssl-sys"
+optional = true
+
+[lib]
+name = "libgit2-sys"
+path = "lib.rs"

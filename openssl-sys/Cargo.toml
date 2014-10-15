@@ -1,0 +1,20 @@
+[package]
+
+name = "openssl-sys"
+version = "0.0.1"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+links = ["openssl"]
+
+# Note that we do not specify a custom build script here. We're simply
+# delegating to pkg-config to find openssl. The default binary in `pkg-config`
+# knows to probe for what's passed on the command line and the appropriate flags
+# will be printed as a result.
+build = "pkg-config/probe"
+
+[lib]
+name = "openssl-sys"
+path = "lib.rs"
+
+[dependencies]
+pkg-config = "*"
+

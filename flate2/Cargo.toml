@@ -1,0 +1,13 @@
+[package]
+
+name = "flate2"
+version = "0.0.1"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+
+# This depends on the miniz.c library, which is relegated to a `*-sys` library
+[dependencies.miniz-sys]
+path = "../miniz-sys"
+
+[lib]
+name = "flate2"
+path = "lib.rs"

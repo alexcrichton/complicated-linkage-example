@@ -1,0 +1,20 @@
+[package]
+
+name = "cargo"
+version = "0.0.1"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+
+# The flate2 dependency has a bundled C dependency which is very rarely found as
+# a system library, miniz.c, and it will almost always build the flate2 package
+# unconditionally.
+[dependencies.flate2]
+path = "flate2"
+
+# Curl is a somewhat standard dependency, and we want to use a fairly stripped
+# down version of the library.
+[dependencies.curl]
+path = "curl"
+
+[dependencies.git2]
+path = "git2"
+features = ["ssh", "ssl"] # we want ssh and ssl support in libgit2

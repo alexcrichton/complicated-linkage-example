@@ -1,0 +1,15 @@
+[package]
+
+name = "libz-sys"
+version = "0.0.1"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+links = ["z"]
+build = "libz-build/build"
+
+[lib]
+name = "libz-sys"
+path = "lib.rs"
+
+[dependencies.libz-build]
+path = "../libz-build"
+

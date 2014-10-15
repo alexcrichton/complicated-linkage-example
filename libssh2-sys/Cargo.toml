@@ -1,0 +1,24 @@
+[package]
+
+name = "libssh2-sys"
+version = "0.0.1"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+links = ["ssh2"]
+build = "libssh2-build/build"
+
+[dependencies.libssh2-build]
+path = "../libssh2-build"
+
+# Everywhere we aren't windows we depend on OpenSSL
+[target.i686-unknown-linux-gnu.dependencies.openssl-sys]
+path = "../openssl-sys"
+[target.x86_64-unknown-linux-gnu.dependencies.openssl-sys]
+path = "../openssl-sys"
+[target.i686-apple-darwin.dependencies.openssl-sys]
+path = "../openssl-sys"
+[target.x86_64-apple-darwin.dependencies.openssl-sys]
+path = "../openssl-sys"
+
+[lib]
+name = "libssh2-sys"
+path = "lib.rs"

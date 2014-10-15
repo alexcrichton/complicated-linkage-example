@@ -1,0 +1,12 @@
+[package]
+
+name = "curl"
+version = "0.0.1"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+
+[dependencies.curl-sys]
+path = "../curl-sys"
+
+[lib]
+name = "curl"
+path = "lib.rs"

@@ -1,0 +1,14 @@
+[package]
+
+name = "miniz-sys"
+version = "0.0.1"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+links = ["miniz"]
+build = "miniz-build/build"
+
+[dependencies.miniz-build]
+path = "../miniz-build"
+
+[lib]
+name = "miniz-sys"
+path = "lib.rs"

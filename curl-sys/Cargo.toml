@@ -1,0 +1,24 @@
+[package]
+
+name = "curl-sys"
+version = "0.0.1"
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+links = ["curl"]
+build = "curl-build/build"
+
+[dependencies.curl-build]
+path = "../curl-build"
+
+# Everywhere we aren't windows we depend on OpenSSL
+[target.i686-unknown-linux-gnu.dependencies.openssl-sys]
+path = "../openssl-sys"
+[target.x86_64-unknown-linux-gnu.dependencies.openssl-sys]
+path = "../openssl-sys"
+[target.i686-apple-darwin.dependencies.openssl-sys]
+path = "../openssl-sys"
+[target.x86_64-apple-darwin.dependencies.openssl-sys]
+path = "../openssl-sys"
+
+[lib]
+name = "curl-sys"
+path = "lib.rs"
